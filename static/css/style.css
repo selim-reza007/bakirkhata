@@ -1,0 +1,10 @@
+header {
+    .navbar {
+        .navbar-brand {
+            width: 50px;
+            .logo-img {
+                scale: 3;
+            }
+        }
+    }
+}
