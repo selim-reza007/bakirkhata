@@ -6,7 +6,7 @@ Customers list
 
 {% block content %}
 <div class="container">
-    <a href="#" class="btn btn-success">Customer &nbsp;<i class="fa-solid fa-plus"></i></a>
+    <a href="{% url 'customer:add-customer' %}" class="btn btn-success">Customer &nbsp;<i class="fa-solid fa-plus"></i></a>
 
     <p class="h2 mt-2">List of all Customers</p>
     <div class="table-responsive">
