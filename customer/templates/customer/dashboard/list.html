@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Customers list
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <a href="#" class="btn btn-success">Customer &nbsp;<i class="fa-solid fa-plus"></i></a>
+
+    <p class="h2 mt-2">List of all Customers</p>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Address</th>
+              <th scope="col">Picture</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>John Doe</td>
+              <td>johndoe@example.com</td>
+              <td>(123) 456-7890</td>
+              <td>123 Main St, Springfield</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jane Smith</td>
+              <td>janesmith@example.com</td>
+              <td>(098) 765-4321</td>
+              <td>456 Elm St, Metropolis</td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </div>
+</div>
+{% endblock content %}
