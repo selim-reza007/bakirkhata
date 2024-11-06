@@ -60,4 +60,14 @@ header {
         }
 
     }
+
+    .customer-container {
+        .customers-list {
+            .customer-info-row {
+                .customer-thumbnail {
+                    width: 70px;
+                }
+            }
+        }
+    }
 }

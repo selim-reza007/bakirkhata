@@ -2,15 +2,17 @@ from django.shortcuts import render, redirect
 from django.db import DatabaseError
 from django.core.exceptions import ValidationError
 from .forms import CreateCustomer
+from .models import Customer
 
 # List view
 def customersListView(request):
-    return render(request, 'customer/dashboard/list.html')
+    data = Customer.objects.all()
+    return render(request, 'customer/dashboard/list.html', { 'customers' : data })
 
 # Add view with form submission and exception handling
 def customerAddView(request):
     if request.method == 'POST':
-        form = CreateCustomer(request.POST)
+        form = CreateCustomer(request.POST, request.FILES)
         try:
             if form.is_valid():
                 form.save()

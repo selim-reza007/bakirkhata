@@ -5,38 +5,43 @@ Customers list
 {% endblock title %}
 
 {% block content %}
-<div class="container">
+<div class="container customer-container">
     <a href="{% url 'customer:add-customer' %}" class="btn btn-success">Customer &nbsp;<i class="fa-solid fa-plus"></i></a>
 
     <p class="h2 mt-2">List of all Customers</p>
-    <div class="table-responsive">
+    <div class="table-responsive customers-list">
         <table class="table table-bordered table-hover">
           <thead class="table-dark">
             <tr>
               <th scope="col">#</th>
               <th scope="col">Picture</th>
               <th scope="col">Name</th>
-              <th scope="col">balance</th>
+              <th scope="col">balance (taka)</th>
               <th scope="col">Phone</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="customer-info-row">
+            {% for customer in customers %}
             <tr>
-              <th scope="row">1</th>
-              <td>John Doe</td>
-              <td>johndoe@example.com</td>
-              <td>(123) 456-7890</td>
-              <td>123 Main St, Springfield</td>
+              <th scope="row">{{ forloop.counter }}</th>
+              <td class="customer-thumbnail">
+                <img class="w-100" src="{{ customer.picture.url }}" alt="Customer image">
+              </td>
+              <td>{{ customer.name }}</td>
+              <td>{{ customer.balance }}</td>
+              <td>{{ customer.mobile }}</td>
+              <td>
+                <a class="btn btn-warning" href="">Edit</a>
+                <form class="d-inline-block" action="">
+                  {% csrf_token %}
+                  <button class="btn btn-danger">Delete</button>
+                </form>
+              </td>
             </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jane Smith</td>
-              <td>janesmith@example.com</td>
-              <td>(098) 765-4321</td>
-              <td>456 Elm St, Metropolis</td>
-            </tr>
-            <!-- Add more rows as needed -->
+            {% endfor %}
+            
+
           </tbody>
         </table>
       </div>
