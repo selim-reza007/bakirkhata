@@ -6,15 +6,15 @@ Customers list
 {% endblock title %}
 
 {% block content %}
-<div class="container">
-    <a href="#" class="btn btn-warning"><i class="fa-solid fa-caret-left"></i> Go back</a>
+<div class="container pb-5">
 
     <p class="h2 mt-2">Create New Customer</p>
 
-    <form class="col-md-6" action="">
+    <form class="col-md-6" method="post">
         {% csrf_token %}
         {{ form|crispy }}
-        <button class="btn btn-success">Create</button>
+        <button class="btn btn-success">Create <i class="fa-solid fa-floppy-disk"></i></button>
+        <a href="" class="btn btn-warning">Cancel <i class="fa-solid fa-xmark"></i></a>
     </form>
 
 </div>
