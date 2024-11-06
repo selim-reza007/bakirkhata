@@ -25,3 +25,9 @@ def customerAddView(request):
         form = CreateCustomer()
 
     return render(request, 'customer/dashboard/add.html', {'form': form})
+
+def customerEditVIew(request, cId):
+    customerObj = Customer.objects.get(id=cId)
+    form = CreateCustomer(instance=customerObj)
+    
+    return render(request, 'customer/dashboard/add.html', {'form': form})

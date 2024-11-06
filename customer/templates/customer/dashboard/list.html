@@ -32,7 +32,7 @@ Customers list
               <td>{{ customer.balance }}</td>
               <td>{{ customer.mobile }}</td>
               <td>
-                <a class="btn btn-warning" href="">Edit</a>
+                <a class="btn btn-warning" href="{% url 'customer:edit-customer' cId=customer.id %}">Edit</a>
                 <form class="d-inline-block" action="">
                   {% csrf_token %}
                   <button class="btn btn-danger">Delete</button>
